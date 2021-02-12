@@ -5,7 +5,7 @@ ZXNumber is a tool to encode and decode floating point/integer literals used by 
 These numbers are stored in 5 bytes (40 bits). A number can either be a floating point number or an integer.
 
 ## Floating point
-Floating point numbers are represented with an exponent, a sign bit and a mantissa. The value is ± 2^exponent × mantissa.
+Floating point numbers are represented with an exponent, a sign bit and a mantissa. The value is ± 2<sup>exponent</sup> × mantissa.
 
 The exponent is 8 bits and has a range from -128 to 126 and is stored in the first byte of the 5 byte number with a bias of 129 (0x81). -128 (0x80) is stored as 0x01, 0 (0x00) is stored as 0x81 and 126 (0x7e) is stored as 0xff. The value 0 is reserved for integers.
 
