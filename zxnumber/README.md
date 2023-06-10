@@ -42,7 +42,7 @@ When loading literals in the ZX calculator with the 0x34 opcode, the number is g
 
 To achieve this, the top two bits of the first byte contains the number of bytes to use for the mantissa minus 1. This means that there are only 6 bits left for the exponent so some exponents have to be stored in an extra byte.
 
-The exponent is stored with a bias of -0x50 (compared to the exponent stored in the 5 byte value). If this value is less than 0x01 or larger than 0x3f, the 6 bits are set to 0 and the exponent is stored in the following byte. This value does is also encoded with the -0x50 bias. This means that floating point values with exponent from -48 to 14 uses one byte for the exponent and all other, including integers, uses two bytes.
+The exponent is stored with a bias of -0x50 (compared to the exponent stored in the 5 byte value). If this value is less than 0x01 or larger than 0x3f, the 6 bits are set to 0 and the exponent is stored in the following byte. This value is also encoded with the -0x50 bias. This means that floating point values with exponent from -48 to 14 uses one byte for the exponent and all other, including integers, uses two bytes.
 
 If using less than 4 bytes for the mantissa, the remaining bits in the mantissa are set to 0.
 
